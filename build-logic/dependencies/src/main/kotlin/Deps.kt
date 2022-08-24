@@ -4,7 +4,7 @@ object Deps {
     const val compileSdkVersion = 31
     const val minSdkVersion = 21
     
-    private const val kotlinVersion = "1.7.20-beta"
+    private const val kotlinVersion = "1.7.20-Beta"
     private const val coroutinesVersion = "1.6.2"
     private const val serializationVersion = "1.3.3"
     private const val nodejsExternalsVersion = "0.0.7"
@@ -26,16 +26,22 @@ object Deps {
     private const val glideVersion = "4.12.0"
     private const val androidAppCompatVersion = "1.3.1"
     private const val androidComposeVersion = "1.3.0-alpha02"
-    private const val androidGradlePluginVersion = "4.2.2"
+    private const val androidGradlePluginVersion = "7.3.0-rc01"
 
     private const val kvisionVersion = "5.1.1"
     private const val shadowVer = "7.0.0"
 
     private const val kdsVer = "1.1.0"
     private const val scriptKtVer = "0.0.5"
+    private const val korgeVersion = "3.0.0"
 
     object Libs {
-
+        object Kotlin {
+            const val Reflection = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+        }
+        object Korlibs {
+            const val KorIM = "com.soywiz.korlibs.korim:korim:$korgeVersion"
+        }
         object KotlinGang {
             object KDS {
                 const val FileDataStorage = "fun.kotlingang.kds:json-files:$kdsVer"
@@ -156,6 +162,10 @@ object Deps {
         }
     }
     object Plugins {
+        object Korge {
+            const val Classpath = "com.soywiz.korlibs.korge.plugins:korge-gradle-plugin:3.0.0"
+            const val Id = "com.soywiz.korge"
+        }
         object Deploy {
             const val Id = "service-deploy"
         }

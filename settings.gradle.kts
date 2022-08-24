@@ -1,13 +1,18 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        mavenCentral()
+        mavenLocal()
         google()
+        maven { url = uri("https://plugins.gradle.org/m2/") }
+        mavenCentral()
+    }
+    plugins {
+        kotlin("multiplatform") version "1.7.20-Beta"
+        id("com.soywiz.korge") version "3.0.0"
     }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -16,9 +21,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "kotlin-project-template"
+rootProject.name = "warscape"
 
 includeBuild("build-logic/dependencies")
 includeBuild("build-logic/configuration")
-includeBuild("build-logic/service-deploy")
-//includeBuild("buildUtils/library-deploy")
